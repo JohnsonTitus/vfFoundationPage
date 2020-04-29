@@ -1,0 +1,319 @@
+<!--
+<apex:page standardController="Account" recordSetVar="accounts">
+  -->  
+    <!--
+
+    <apex:pageBlock title="The Outputblock">    
+         
+        <apex:pageBlockSection >
+            
+            <apex:outputField value="{!Account.Name}"/>
+            
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Account Id" for="AId"/>
+                 <apex:outputText value="{!Account.Id} {!Account.Name}" id="AId"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Date Created" for="Dt" />
+                <apex:outputText value="{0,date,full}" id="Dt">
+                    <apex:param value="{!Account.CreatedDate}" />
+                </apex:outputText>
+            </apex:pageBlockSectionItem>
+            
+            <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountFieldSet}" var="field">
+                <apex:outputField value="{!Account[field]}"/>
+            </apex:repeat>
+           
+        </apex:pageBlockSection>
+        
+       
+   </apex:pageBlock>
+    
+    <apex:form>
+        <apex:pageBlock title="Input Block">
+            <apex:pageMessages  />
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!Save}" value="Save" />
+                <apex:commandButton action="{!QuickSave}" value="QuickSave" />
+                
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                
+                <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountFieldSet}" var="field">
+                    <apex:inputField value="{!Account[field]}"/>
+                </apex:repeat>
+            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+-->
+    <!--
+    <apex:dataList value="{!accounts}" var="a">
+        <apex:outputText value="{!a.name}" />
+    </apex:dataList>
+    -->
+    <!--
+    <apex:pageBlock >
+        <apex:form title="Pagination">
+        <apex:pageBlockTable value="{!accounts}" var="a">
+            <apex:column >
+                <apex:facet name="header">
+                    Account Name
+                </apex:facet>
+                <apex:facet name="footer">
+                    End of table
+                </apex:facet>
+                <apex:outputField value="{!a.name}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">
+                    Account Rating
+                </apex:facet>
+                <apex:facet name="footer">
+                    End of table
+                </apex:facet>
+                <apex:outputField value="{!a.Rating}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:panelGrid columns="2">
+            <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+            <apex:commandLink action="{!next}">Next</apex:commandlink>
+        </apex:panelGrid>    
+        </apex:form>
+    </apex:pageBlock>
+    -->
+    <!--
+    <apex:form title="List view demo">
+        <apex:pageBlock title="Account List"> -->
+        <!--filterId gets updated with the listviewoptions - 'All accounts', 'Recently viewed accounts'...--><!--
+        <apex:selectList value="{!filterId}" size="1">
+            <apex:selectOptions value="{!listViewOptions}" />
+        </apex:selectList>
+        <apex:commandButton action="{!first}" value="GO"/>
+        
+        <apex:pageBlockTable value="{!accounts}" var="a">
+            <apex:column >
+                <apex:facet name="header">
+                    Account Name
+                </apex:facet>
+                <apex:facet name="footer">
+                    End of table
+                </apex:facet>
+                <apex:outputField value="{!a.name}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">
+                    Account Rating
+                </apex:facet>
+                <apex:facet name="footer">
+                    End of table
+                </apex:facet>
+                <apex:outputField value="{!a.Rating}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:panelGrid columns="2">
+            <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+            <apex:commandLink action="{!next}">Next</apex:commandlink>
+        </apex:panelGrid>    
+        
+        </apex:pageBlock>
+    </apex:form>
+-->
+    <!--
+    <apex:form title="Update multiple records">
+        <apex:pageBlock title="Account List"> 
+       
+        <apex:inputField value="{!Account.Rating}" />
+       
+        <apex:commandButton action="{!Save}" value="Save"/>
+        
+        <apex:pageBlockTable value="{!selected}" var="a">
+            <apex:column >
+                <apex:facet name="header">
+                    Account Name
+                </apex:facet>
+                <apex:facet name="footer">
+                    End of table
+                </apex:facet>
+                <apex:outputField value="{!a.name}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">
+                    Account Rating
+                </apex:facet>
+                <apex:facet name="footer">
+                    End of table
+                </apex:facet>
+                <apex:outputField value="{!a.Rating}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:panelGrid columns="2">
+            <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+            <apex:commandLink action="{!next}">Next</apex:commandlink>
+        </apex:panelGrid>    
+        
+        </apex:pageBlock>
+    </apex:form>
+-->
+<!--
+<apex:page standardController="Account">
+    <apex:pageBlock title="The Outputblock">    
+         
+        <apex:pageBlockSection >
+            
+            <apex:outputField value="{!Account.Name}"/>
+            
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Account Id" for="AId"/>
+                 <apex:outputText value="{!Account.Id} {!Account.Name}" id="AId"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Date Created" for="Dt" />
+                <apex:outputText value="{0,date,full}" id="Dt">
+                    <apex:param value="{!Account.CreatedDate}" />
+                </apex:outputText>
+            </apex:pageBlockSectionItem>
+            
+            <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountFieldSet}" var="field">
+                <apex:outputField value="{!Account[field]}"/>
+            </apex:repeat>
+           
+        </apex:pageBlockSection>
+        
+       
+   </apex:pageBlock>
+   <apex:pageBlock >
+       <apex:pageBlockTable value="{!Account.Contacts}" var="c" >
+           <apex:column >
+               <apex:outputLink value="/{!c.Id}"><apex:outputField value="{!c.FirstName}"/></apex:outputLink>
+           </apex:column>  
+           <apex:column >
+               <apex:outputField value="{!c.LastName}"/>
+           </apex:column> 
+       </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>
+-->
+<!--
+<apex:page standardController="Account" >
+    <apex:form>
+    <apex:pageBlock title="The Outputblock" id="accountDetails">    
+         
+        <apex:pageBlockSection >
+            
+            <apex:outputField value="{!Account.Name}"/>
+            
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Account Id" for="AId"/>
+                 <apex:outputText value="{!Account.Id} {!Account.Name}" id="AId"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Date Created" for="Dt" />
+                <apex:outputText value="{0,date,full}" id="Dt">
+                    <apex:param value="{!Account.CreatedDate}" />
+                </apex:outputText>
+            </apex:pageBlockSectionItem> 
+			-->
+            <!-- conditional rendering of output field -->
+			<!--
+            <apex:outputField value="{!Account.TickerSymbol}" rendered="{!Account.Rating = 'Hot'}"/>
+            
+            <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountFieldSet}" var="field">
+                <apex:inputField value="{!Account[field]}"/>
+            </apex:repeat>
+           
+        </apex:pageBlockSection>
+        
+        	<apex:pageBlockButtons>
+                <apex:commandButton action="{!Save}" value="Save" />
+                <apex:commandButton action="{!QuickSave}" value="QuickSave"  rerender="accountDetails" />
+                
+            </apex:pageBlockButtons>
+        
+   </apex:pageBlock>
+   </apex:form>
+   <apex:pageBlock >
+       <apex:pageBlockTable value="{!Account.Contacts}" var="c" >
+           <apex:column >
+               <apex:outputLink value="/{!c.Id}"><apex:outputField value="{!c.FirstName}"/></apex:outputLink>
+           </apex:column>  
+           <apex:column >
+               <apex:outputField value="{!c.LastName}"/>
+           </apex:column> 
+       </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:page>
+-->
+<!--
+<apex:page standardController="Account">
+    
+    <apex:form>
+        <apex:pageBlock title="Input Block" id="accountDetails">
+            <apex:pageMessages  />
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!Save}" value="Save" />
+-->
+                <!--the text in the startText will be displayed on the QuickSave button when the saving is in process, 
+				even a spinning image can be displayed -->
+<!--
+                <apex:actionStatus id="saveStatus" startText="Please wait...">
+                    <apex:facet name="stop">
+                        <apex:commandButton action="{!QuickSave}" value="QuickSave" rerender="accountDetails" status="saveStatus" />
+                    </apex:facet>
+                    
+                </apex:actionStatus>
+                
+                
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                
+                <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountFieldSet}" var="field">
+                    <apex:inputField value="{!Account[field]}"/>
+                </apex:repeat>
+            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+-->
+<!-- to render as pdf and custom styling -->
+<apex:page standardController="Account" showHeader="false" standardStylesheets="false" renderAs="pdf">
+ 	<head>
+        <style type="text/css">
+        </style>
+     
+    </head>
+   
+
+    <apex:pageBlock title="The Outputblock">    
+         
+        <apex:pageBlockSection >
+            
+            <apex:outputField value="{!Account.Name}"/>
+            
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Account Id" for="AId"/>
+                 <apex:outputText value="{!Account.Id} {!Account.Name}" id="AId"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Date Created" for="Dt" />
+                <apex:outputText value="{0,date,full}" id="Dt">
+                    <apex:param value="{!Account.CreatedDate}" />
+                </apex:outputText>
+            </apex:pageBlockSectionItem>
+            
+            <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountFieldSet}" var="field">
+                <apex:outputField value="{!Account[field]}"/>
+            </apex:repeat>
+           
+        </apex:pageBlockSection>
+        
+       
+   </apex:pageBlock>
+</apex:page>
